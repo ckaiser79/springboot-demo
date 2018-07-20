@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Api("access to database")
-public class EchoController {
+public class EchoWithListController {
 
 	private List<String> data = new LinkedList();
 
 	/**
 	 * save a word in the database using a http connection
 	 */
-	@ApiOperation("save a new word in our database")
+	@ApiOperation("save a new word in a list")
 	@PostMapping("/api/words/{word}")
 	public void saveWord(@PathVariable("word") String word) {
 		data.add(word);
 	}
 
-	@ApiOperation("returns all records from the datbase")
+	@ApiOperation("returns all records from the list")
 	@GetMapping("/api/words")
 	public String[] getAllWords() {
 		String[] r = new String[data.size()];

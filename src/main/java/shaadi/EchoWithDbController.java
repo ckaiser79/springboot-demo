@@ -23,7 +23,7 @@ public class EchoWithDbController {
 	/**
 	 * save a word in the database using a http connection
 	 */
-	@ApiOperation("save a new word in our database")
+	@ApiOperation("save a new word in our database")	// documentation if call /swagger-ui.html
 	@PostMapping("/api/db/words/{word}")
 	public void saveWord(@PathVariable("word") String word) {
 		Word w = new Word();
@@ -35,6 +35,13 @@ public class EchoWithDbController {
 	@GetMapping("/api/db/words")
 	public Iterable<Word> getAllWords() {
 		final Iterable<Word> all = wordRepository.findAll();
+		return all;
+	}
+
+	@ApiOperation("returns all records from database, which contain the string hello")
+	@GetMapping("/api/db/words")
+	public Iterable<Word> getHelloWords() {
+		final Iterable<Word> all = wordRepository.findAllWithHello();
 		return all;
 	}
 
