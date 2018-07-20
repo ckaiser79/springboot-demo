@@ -1,0 +1,9 @@
+data
+*~
+*.iml
+.idea
+target/
+src/test/resources/users/in/*gz
+src/test/resources/users/errors/*gz
+src/test/resources/users/processed/*gz
+src/test/resources/users/work/*gz
