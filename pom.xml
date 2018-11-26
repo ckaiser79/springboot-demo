@@ -24,6 +24,19 @@
 		<module>lib</module>
 		<module>server</module>
 	</modules>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>repo-actebis-snapshots</id>
+			<name>snapshot repo</name>
+			<url>https://ecom-buildmaster.lx.hosts.intra/artifactory/webshop-mvn-mock-so</url>
+		</snapshotRepository>
+		<repository>
+			<id>repo-actebis-release</id>
+			<name>release repository</name>
+			<url>https://ecom-buildmaster.lx.hosts.intra/artifactory/webshop-mvn-mock-so</url>
+		</repository>
+	</distributionManagement>	
 
 	<dependencyManagement>
 		<dependencies>
